@@ -26,7 +26,7 @@
     self.navigationItem.titleView = [UIView new];
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
     [[self titleLabel] setFont:[UIFont boldSystemFontOfSize:17]];
-    [[self titleLabel] setText:@"1.3.4"];
+    [[self titleLabel] setText:@"1.3.5"];
     [[self titleLabel] setTextColor:[UIColor whiteColor]];
     [[self titleLabel] setTextAlignment:NSTextAlignmentCenter];
     [[[self navigationItem] titleView] addSubview:[self titleLabel]];
@@ -78,7 +78,7 @@
         [[self enableSwitch] setEnabled:NO];
 
         UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"Copypasta" message:@"Copypasta has detected that you have disabled it with iCleaner Pro, here are some quick actions you can perform" preferredStyle:UIAlertControllerStyleAlert];
-        
+
         UIAlertAction* resetAction = [UIAlertAction actionWithTitle:@"Reset preferences" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
             [self resetPreferences];
         }];
@@ -97,7 +97,7 @@
 
         [self presentViewController:alertController animated:YES completion:nil];
     }
-    
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -135,7 +135,7 @@
 	if (_specifiers == nil) _specifiers = [self loadSpecifiersFromPlistName:@"Root" target:self];
 
 	return _specifiers;
-    
+
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -164,7 +164,7 @@
 }
 
 - (void)setEnabled {
-        
+
     if ([[[self preferences] objectForKey:@"Enabled"] isEqual:@(YES)])
         [[self preferences] setBool:NO forKey:@"Enabled"];
     else
@@ -195,7 +195,7 @@
 - (void)resetPrompt {
 
     UIAlertController* resetAlert = [UIAlertController alertControllerWithTitle:@"Copypasta" message:@"Do you really want to reset your preferences?" preferredStyle:UIAlertControllerStyleActionSheet];
-	
+
     UIAlertAction* confirmAction = [UIAlertAction actionWithTitle:@"Yaw" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
         [self resetPreferences];
 	}];
@@ -212,7 +212,7 @@
 - (void)resetPreferences {
 
     [[self preferences] removeAllObjects];
-    
+
     [[self enableSwitch] setOn:NO animated:YES];
     [self respring];
 
@@ -221,7 +221,7 @@
 - (void)resetClipboardPrompt {
 
     UIAlertController* resetAlert = [UIAlertController alertControllerWithTitle:@"Copypasta" message:@"This will reset your clipboard" preferredStyle:UIAlertControllerStyleActionSheet];
-	
+
     UIAlertAction* confirmAction = [UIAlertAction actionWithTitle:@"Okey" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
         [self resetClipboard];
 	}];
