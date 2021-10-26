@@ -4,7 +4,7 @@
 <dict>
 	<key>items</key>
 	<array>
-	
+
 		<dict>
 			<key>cellClass</key>
 			<string>DuoTwitterCell</string>
@@ -348,7 +348,7 @@
 			<string>enableRegex</string>
 			<key>PostNotification</key>
 			<string>love.litten.copypastapreferences/ReloadPrefs</string>
-		</dict>		
+		</dict>
 		<dict>
 			<key>cell</key>
 			<string>PSEditTextCell</string>
@@ -376,9 +376,13 @@
             <array>
                 <string>0</string>
                 <string>1</string>
+                <string>2</string>
+                <string>3</string>
             </array>
             <key>validTitles</key>
             <array>
+                <string>Save when match</string>
+                <string>Save when not match</string>
                 <string>Include only matches</string>
             	<string>Exclude all but matches</string>
             </array>
